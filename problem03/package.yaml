@@ -1,0 +1,49 @@
+name:                problem03
+version:             0.1.0.0
+github:              "jesseDMoore1994/problem03"
+license:             BSD3
+author:              "Jesse Moore"
+maintainer:          "jesse@jessemoore.dev"
+copyright:           "lgpl"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            ProjectEuler
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/jesseDMoore1994/problem03#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- primes == 0.2.1.0
+
+library:
+  source-dirs: src
+
+executables:
+  problem03-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - problem03
+
+tests:
+  problem03-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - problem03
